@@ -2,11 +2,13 @@
 #define CLIENTE_C
 
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include <string>
 using  namespace std;
 
 class Cliente{
-    int telefono_cliente;
+    int telefono_cliente, num, c;
     string nombre_cliente, correo_cliente, id_cliente, direccion_cliente;
     string tipo_cliente = "Standard"; 
     public:
@@ -37,10 +39,16 @@ class Cliente{
     }
 
     string Otorgar_id_cliente(string nombre_c, string tipo_cliente){
-        id_cliente = nombre_c + " " +tipo_cliente;
+        srand(time(NULL));
+        num = 1 + rand() % (101-1);
+        id_cliente = to_string(num) + nombre_c[0] + " " +tipo_cliente[0];
         return id_cliente;
     }
 
+    string Otorgar_tipo(){
+        tipo_cliente = "Frecuente";
+        return tipo_cliente;
+    }
 
     int getTelefono_cliente(){return telefono_cliente;}
     string getNombre_cliente(){return nombre_cliente;}
