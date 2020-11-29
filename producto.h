@@ -1,6 +1,7 @@
 #ifndef PRODUCTO_C
 #define PRODUCTO_C
 
+#include "cliente.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -27,9 +28,17 @@ class Producto{
     void setPromocion_cliente_frecuente(int promocion_cliente_frecuente){this->promocion_cliente_frecuente = promocion_cliente_frecuente;}
     void setId_producto(string id_producto){this->id_producto = id_producto;}
 
-    string Otorgar_id_producto(){
-        
-    }
+    string otorgar_id_producto(){
+
+    }//otorgar id producto
+
+    int aplicar_descuento_cliente(){
+        Cliente cliente1;
+        if (cliente1.otorgar_tipo() == "VIP"){
+            
+        }//if
+
+    }//aplicar descuento cliente
 };//Clase Producto
 
 #endif
