@@ -15,25 +15,25 @@ class Cliente{
     Cliente(){
     }
 
-    string Registrar_nombre_cliente(){
+    string registrar_nombre_cliente(){
         cout << "Ingresa el nombre del cliente: "; 
         getline(cin, nombre_cliente);
         return nombre_cliente;
     }
 
-    string Registrar_correo_cliente(){
+    string registrar_correo_cliente(){
         cout<< "Ingresa el correo del cliente: ";
         getline(cin, correo_cliente);
         return correo_cliente;
     }
 
-    string Registrar_direccion_cliente(){
+    string registrar_direccion_cliente(){
         cout<< "Ingresa la direccion del cliente: ";
         getline(cin, direccion_cliente);
         return direccion_cliente;
     }
 
-    int Registrar_telefono_cliente(){
+    int registrar_telefono_cliente(){
         cout<< "Ingresa el telefono del cliente: "; cin >> telefono_cliente;
         return telefono_cliente;
     }
@@ -58,14 +58,14 @@ class Cliente{
         this -> direccion_cliente = direccion_cliente;
     }
 
-    string Otorgar_id_cliente(string nombre_cliente, string tipo_cliente){
+    string otorgar_id_cliente(string nombre_cliente, string tipo_cliente){
         srand(time(NULL));
         num = 1 + rand() % (101-1);
         id_cliente = to_string(num) + nombre_cliente[0] + " " +tipo_cliente[0];
         return id_cliente;
     }
 
-    string Otorgar_tipo(){
+    string otorgar_tipo(){
         tipo_cliente = "Frecuente";
         return tipo_cliente;
     }
