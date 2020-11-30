@@ -2,13 +2,16 @@
 #define CLIENTE_C
 
 #include <iostream>
+#include "producto.h"
+#include "inventario.h"
 #include <string>
+#include <vector>
 
 using  namespace std;
 
-class Cliente{
-    int telefono_cliente, compras;
-    string nombre_cliente, correo_cliente, direccion_cliente;
+class Cliente{ 
+    int telefono_cliente, compras, cantidad_compra;
+    string nombre_cliente, correo_cliente, direccion_cliente, tipo_prenda;
     string tipo_cliente; 
     long id_cliente;
     public:
@@ -25,6 +28,8 @@ class Cliente{
     long getId_cliente(){return id_cliente;}
     string getTipo_cliente(){return tipo_cliente;}
     int getCompras(){return compras;}
+    int getCantidad_compra(){return cantidad_compra;}
+    string getTipo_prenda(){return tipo_prenda;}
     void setTelefono_cliente(int telefono_cliente){ this -> telefono_cliente = telefono_cliente;}
     void setNombre_cliente(string nombre_cliente){ this -> nombre_cliente = nombre_cliente;}
     void setCorreo_cliente(string correo_cliente){ this -> correo_cliente = correo_cliente;}
@@ -32,7 +37,8 @@ class Cliente{
     void setId_cliente(long setId_cliente){ this -> id_cliente = id_cliente;}
     void setTipo_cliente(string tipo_cliente){ this -> tipo_cliente = tipo_cliente;}
     void setCompras(int compras){this ->compras = compras;}
-
+    void setCantidad_compra(int cantidad_compra){this -> cantidad_compra = cantidad_compra;}
+    void setTipo_prenda(string tipo_prenda){this -> tipo_prenda = tipo_prenda;}
 
     string otorgar_tipo(){
         if (compras>= 10){
@@ -70,12 +76,11 @@ class Cliente{
         }
     }
 
-    string registrar_compra(){
-        int cantidad_compra;
-        string tipo_prenda;
-        cout << "Que tipo de prenda se adquirió (H/M): "; cin >> tipo_prenda;
-        cout << "Cuantas prendas se adquirieron: "; cin >> cantidad_compra;
-        compras = compras + cantidad_compra; 
+    void registrar_compra(){
+        int contador = 0;
+        cout << "Que tipo de prenda se va a adquirir (H/M): "; cin >> tipo_prenda;
+        cout << "Cuantas prendas se quieren adquirir: "; cin >> cantidad_compra;
+        compras = compras + cantidad_compra;
     }
     
     int calcular_recompensa_cliente(){

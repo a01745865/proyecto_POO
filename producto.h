@@ -1,13 +1,15 @@
 #ifndef PRODUCTO_C
 #define PRODUCTO_C
 
-#include "cliente.h"
+
 #include <iostream>
+#include "cliente.h"
 #include <string>
 #include <vector>
 using namespace std;
 
 class Producto{
+    Cliente cliente1;
     float precio, promocion, promocion_cliente_frecuente;
     int id_producto;
     string genero_prenda;
@@ -42,7 +44,6 @@ class Producto{
     }//otorgar id producto
 
     float aplicar_descuento_cliente(){
-        Cliente cliente1;
         if (cliente1.otorgar_tipo() == "Frecuente"){
             precio = precio * promocion_cliente_frecuente;
         }
@@ -50,27 +51,20 @@ class Producto{
     }
 
     void datos_producto(){
-        float opcion;
-        opcion = 1;
         //vector<Producto> datos;
-
-        while (opcion == 1){
-            float costo;
-            float promo;
-            string genero;
-            cout<<"Ingresa el precio del producto: "; cin >> costo;
-            cout<<"¿El producto tiene una promoción? (si no tiene pon 0, si sí escribelo como decimal): "; cin >> promo;
-            cout<<"¿De que genero es la prenda? (H/M) ";cin >>genero;
-            cout<<"¿Quieres ingresar otro producto? (sí = 1, no = 0) "; cin >>opcion;
-            cout<<endl;
-            otorgar_id_producto();
-            setPrecio(costo);
-            setPromocion(promo);
-            setGenero_prenda(genero);
-            cout<<print();
-            aplicar_promocion();
-            //datos.push_back(prod);
-            }//while
+        float costo;
+        float promo;
+        string genero;
+        cout<<"Ingresa el precio del producto: "; cin >> costo;
+        cout<<"¿El producto tiene una promoción? (si no tiene pon 0, si sí escribelo como decimal): "; cin >> promo;
+        cout<<"¿De que genero es la prenda? (H/M) ";cin >>genero;
+        cout<<endl;
+        otorgar_id_producto();
+        setPrecio(costo);
+        setPromocion(promo);
+        setGenero_prenda(genero);
+        aplicar_promocion();
+        //datos.push_back(prod);
         //for (int i=0; i<datos.size(); i++){
             //cout<<"Producto: " + to_string(i+1);
             //cout<<datos[i].print();
