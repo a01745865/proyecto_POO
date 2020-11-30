@@ -6,9 +6,10 @@
 using  namespace std;
 
 class Cliente{
-    int telefono_cliente, num, c, id_cliente, compras;
+    int telefono_cliente, num, c, compras;
     string nombre_cliente, correo_cliente, direccion_cliente;
     string tipo_cliente; 
+    long id_cliente;
     public:
     Cliente(){
         tipo_cliente = "Standard";
@@ -20,13 +21,13 @@ class Cliente{
     string getNombre_cliente(){return nombre_cliente;}
     string getCorreo_cliente(){return correo_cliente;}
     string getDireccion_cliente(){return direccion_cliente;}
-    int getId_cliente(){return id_cliente;}
+    long getId_cliente(){return id_cliente;}
     string getTipo_cliente(){return tipo_cliente;}
     void setTelefono_cliente(int telefono_cliente){ this -> telefono_cliente = telefono_cliente;}
     void setNombre_cliente(string nombre_cliente){ this -> nombre_cliente = nombre_cliente;}
     void setCorreo_cliente(string correo_cliente){ this -> correo_cliente = correo_cliente;}
     void setDireccion_cliente(string direccion_cliente){ this -> direccion_cliente = direccion_cliente;}
-    void setId_cliente(int setId_cliente){ this -> id_cliente = id_cliente;}
+    void setId_cliente(long setId_cliente){ this -> id_cliente = id_cliente;}
     void setTipo_cliente(string tipo_cliente){ this -> tipo_cliente = tipo_cliente;}
 
 
@@ -54,7 +55,7 @@ class Cliente{
             cout << "Ingresa el nombre del cliente: ", getline(cin, nombre);
             cout << "Ingresa el correo del cliente: ",  getline(cin, correo);
             cout << "Ingresa la direccion del cliente: ", getline(cin, direccion);
-            cout << "Ingresa el telefono del cliente: ", getline (cin,telefono); 
+            cout << "Ingresa el telefono del cliente: "; cin>>telefono; 
             cout << "¿Quieres ingresar otro cliente? (Si = 1 / No = 2) "; cin >> opcion;
             client.setId_cliente(id_cliente);
             client.setCorreo_cliente(correo);
