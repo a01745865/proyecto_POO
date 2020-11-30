@@ -8,8 +8,10 @@ using  namespace std;
 
 class Inventario{
     int cantidad_producto;
-    string color_producto, genero_prenda;
+    string color_producto;
+    float promocion_tienda;
     Producto producto;
+    Cliente cliente;
     public:
     Inventario()=default;//Constructor default
 
