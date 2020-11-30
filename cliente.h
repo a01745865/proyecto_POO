@@ -12,8 +12,7 @@ class Cliente{
     string nombre_cliente, correo_cliente, id_cliente, direccion_cliente;
     string tipo_cliente = "Standard"; 
     public:
-    Cliente(){
-    }
+    Cliente() = default;//Constructor default
 
     string registrar_nombre_cliente(){
         cout << "Ingresa el nombre del cliente: "; 
