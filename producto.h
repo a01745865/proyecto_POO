@@ -56,10 +56,9 @@ class Producto{
         float promo;
         string genero;
         cout<<"Ingresa el precio del producto: "; cin >> costo;
-        cout<<"¿El producto tiene una promoción? (si no tiene pon 0, si sí escribelo como decimal): "; cin >> promo;
+        cout<<"¿El producto tiene una promocion? (si no tiene pon 0, si si escribelo como decimal): "; cin >> promo;
         cout<<"¿De que genero es la prenda? (H/M) ";cin >>genero;
         cout<<endl;
-        otorgar_id_producto();
         setPrecio(costo);
         setPromocion(promo);
         setGenero_prenda(genero);
@@ -74,13 +73,13 @@ class Producto{
         
     }//datos producto
     string print(){
-        return"\nProducto: \n\tID: " + to_string(id_producto) + "\n\tEl precio del producto es de: $"+ to_string(precio)+"\n\tEse producto tiene promoción del "+ to_string(promocion) +" porciento.\n\t"+"Esa prenda está disponible para " + genero_prenda+ "\n";
+        return"\nProducto: \n\tID: " + to_string(id_producto) + "\n\tEl precio del producto es de: $"+ to_string(precio)+"\n\tEse producto tiene promocion del "+ to_string(promocion) +" porciento.\n\t"+"Esa prenda está disponible para " + genero_prenda+ "\n";
     }//print
     void aplicar_promocion(){
         float descuento;
         descuento = precio * promocion;
         precio = precio - descuento;
-        cout << "\tCon la promoción el nuevo precio es: $"+to_string(precio)<<endl;
+        cout << "\tCon la promocion el nuevo precio es: $"+to_string(precio)<<endl;
         
     }//aplicar promocion
 };//Clase Producto

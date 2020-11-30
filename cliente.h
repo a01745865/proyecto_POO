@@ -51,9 +51,6 @@ class Cliente{
     }
 
     void ingresar_datos(){
-        int opcion;
-        opcion = 1;
-        while (opcion == 1){
             id_cliente++;
             //Cliente client = Cliente();
             string nombre;
@@ -65,19 +62,17 @@ class Cliente{
             cout << "Ingresa el correo del cliente: ",  getline(cin, correo);
             cout << "Ingresa la direccion del cliente: ", getline(cin, direccion);
             cout << "Ingresa el telefono del cliente: "; cin>>telefono; 
-            cout << "¿Quieres ingresar otro cliente? (Si = 1 / No = 2) "; cin >> opcion;
             cout<<endl;
             setId_cliente(id_cliente);
             setCorreo_cliente(correo);
             setTelefono_cliente(telefono);
             setNombre_cliente(nombre);
             setDireccion_cliente(direccion);
-            cout << print() << endl;
-        }
     }
 
     void registrar_compra(){
         int contador = 0;
+        cout << "Cliente: "+ nombre_cliente +"\n";
         cout << "Que tipo de prenda se va a adquirir (H/M): "; cin >> tipo_prenda;
         cout << "Cuantas prendas se quieren adquirir: "; cin >> cantidad_compra;
         compras = compras + cantidad_compra;
