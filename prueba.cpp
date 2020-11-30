@@ -8,7 +8,8 @@ using  namespace std;
 int main(){
     Cliente c1;
     c1.ingresar_datos();
-    Producto p1;
-    p1.datos_producto();
+    //Producto p1;
+    //p1.datos_producto();
+
 
 };

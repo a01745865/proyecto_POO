@@ -7,7 +7,7 @@
 using  namespace std;
 
 class Cliente{
-    int telefono_cliente, num, c, compras;
+    int telefono_cliente, compras;
     string nombre_cliente, correo_cliente, direccion_cliente;
     string tipo_cliente; 
     long id_cliente;
@@ -24,12 +24,14 @@ class Cliente{
     string getDireccion_cliente(){return direccion_cliente;}
     long getId_cliente(){return id_cliente;}
     string getTipo_cliente(){return tipo_cliente;}
+    int getCompras(){return compras;}
     void setTelefono_cliente(int telefono_cliente){ this -> telefono_cliente = telefono_cliente;}
     void setNombre_cliente(string nombre_cliente){ this -> nombre_cliente = nombre_cliente;}
     void setCorreo_cliente(string correo_cliente){ this -> correo_cliente = correo_cliente;}
     void setDireccion_cliente(string direccion_cliente){ this -> direccion_cliente = direccion_cliente;}
     void setId_cliente(long setId_cliente){ this -> id_cliente = id_cliente;}
     void setTipo_cliente(string tipo_cliente){ this -> tipo_cliente = tipo_cliente;}
+    void setCompras(int compras){this ->compras = compras;}
 
 
     string otorgar_tipo(){
@@ -46,8 +48,8 @@ class Cliente{
         int opcion;
         opcion = 1;
         while (opcion == 1){
-            ++id_cliente;
-            Cliente client = Cliente();
+            id_cliente++;
+            //Cliente client = Cliente();
             string nombre;
             int telefono;
             string correo;
@@ -59,12 +61,12 @@ class Cliente{
             cout << "Ingresa el telefono del cliente: "; cin>>telefono; 
             cout << "¿Quieres ingresar otro cliente? (Si = 1 / No = 2) "; cin >> opcion;
             cout<<endl;
-            client.setId_cliente(id_cliente);
-            client.setCorreo_cliente(correo);
-            client.setTelefono_cliente(telefono);
-            client.setNombre_cliente(nombre);
-            client.setDireccion_cliente(direccion);
-            cout << client.print() << endl;
+            setId_cliente(id_cliente);
+            setCorreo_cliente(correo);
+            setTelefono_cliente(telefono);
+            setNombre_cliente(nombre);
+            setDireccion_cliente(direccion);
+            cout << print() << endl;
         }
     }
 
