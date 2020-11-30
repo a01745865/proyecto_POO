@@ -15,20 +15,17 @@ class Cliente{
     Cliente() = default;//Constructor default
 
     string registrar_nombre_cliente(){
-        cout << "Ingresa el nombre del cliente: "; 
-        getline(cin, nombre_cliente);
+        cout << "Ingresa el nombre del cliente: ", getline(cin, nombre_cliente);
         return nombre_cliente;
     }
 
     string registrar_correo_cliente(){
-        cout<< "Ingresa el correo del cliente: ";
-        getline(cin, correo_cliente);
+        cout<< "Ingresa el correo del cliente: ", getline(cin, correo_cliente);
         return correo_cliente;
     }
 
     string registrar_direccion_cliente(){
-        cout<< "Ingresa la direccion del cliente: ";
-        getline(cin, direccion_cliente);
+        cout<< "Ingresa la direccion del cliente: ", getline(cin, direccion_cliente);
         return direccion_cliente;
     }
 
