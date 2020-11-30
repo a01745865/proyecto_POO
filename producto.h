@@ -68,7 +68,7 @@ class Producto{
             prod.setGenero_prenda(genero);
             cout<<prod.print()<<endl;
             datos.push_back(prod);
-            cout<<datos[1];
+            //cout<<datos[1];
         }//while
     }//datos producto
     string print(){

@@ -58,6 +58,7 @@ class Cliente{
             cout << "Ingresa la direccion del cliente: ", getline(cin, direccion);
             cout << "Ingresa el telefono del cliente: "; cin>>telefono; 
             cout << "¿Quieres ingresar otro cliente? (Si = 1 / No = 2) "; cin >> opcion;
+            cout<<endl;
             client.setId_cliente(id_cliente);
             client.setCorreo_cliente(correo);
             client.setTelefono_cliente(telefono);
@@ -89,7 +90,8 @@ class Cliente{
 
 
     string print(){
-        return "Cliente: \nID: "+to_string(id_cliente)+"\nNombre: "+nombre_cliente+"\nCorreo: "+correo_cliente+"\nDireccion: "+direccion_cliente+"\nTelefono: "+to_string(telefono_cliente);
+        return "Cliente: \n\tID: "+to_string(id_cliente)+"\n\tNombre: "+nombre_cliente+"\n\tCorreo: "+correo_cliente+"\n\tDireccion: "+direccion_cliente+"\n\tTelefono: "+to_string(telefono_cliente)+"\n";
+
     }
 
 };
