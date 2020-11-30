@@ -9,9 +9,9 @@ using namespace std;
 class Producto{
     int precio, promocion, promocion_cliente_frecuente;
     string id_producto;
+    string marca, genero, etapa, tipo;
     public:
-    Producto(){
-    }
+    Producto() = default; //Constructor default
     Producto(int precio, int promocion, int promocion_cliente_frecuente, string id_producto){
         this->precio = precio;
         this->promocion = promocion;
@@ -35,7 +35,7 @@ class Producto{
     int aplicar_descuento_cliente(){
         Cliente cliente1;
         if (cliente1.otorgar_tipo() == "VIP"){
-            
+
         }//if
 
     }//aplicar descuento cliente
