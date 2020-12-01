@@ -54,9 +54,7 @@ int main( ){
             }
             else{
                for (int i = 0; i<inv.getClientes().size(); i++){
-                    Cliente cl;
-                    cl = inv.getClientes()[i];
-                    if (cl.getCompras()>= 5){
+                    if (inv.getClientes()[i].getCompras() >= 5){
                         inv.recompensa_tipo_cliente();
                         break;
                     }

@@ -89,11 +89,15 @@ class Inventario{
             clientes[i].registrar_compra();
             tipo = clientes[i].getTipo_prenda();
             cantidad = clientes[i].getCantidad_compra();
+            tipo_cliente = saber_tipo_cliente(clientes[i];
+            if (tipo_cliente == "Frecuente"){
+                cout << "\nSe le hace un descuento del 15% adicional a "+ clientes[i].getNombre_cliente() + " por ser cliente Frecuente. \n" << endl;
+            }
                 for (int a = 0; a < cantidad; a ++){
                     for (int b = 0; b < productos.size(); b ++){
                         if (tipo == productos[b].getGenero_prenda()){
                             productos.erase(productos.begin() + b);
-                            if (saber_tipo_cliente(clientes[i]) == "Frecuente"){
+                            if (tipo_cliente == "Frecuente"){
                                 productos[b].aplicar_descuento_cliente();
                             }//If
                             cout << "\nSe aquirio el producto: "+ productos[b].print() + "\n"; 

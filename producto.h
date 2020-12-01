@@ -49,7 +49,6 @@ class Producto{
 
     void aplicar_descuento_cliente(){
         precio = precio * promocion_cliente_frecuente;
-        cout << "Se aplico un descuento del 15% en los productos por ser cliente frecuente. " << endl;
     }//Aplicar descuento cliente
 
     void datos_producto(){
