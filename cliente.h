@@ -53,7 +53,6 @@ class Cliente{
 
     void ingresar_datos(){
             id_cliente++;
-            //Cliente client = Cliente();
             string nombre;
             int telefono;
             string correo;

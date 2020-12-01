@@ -52,6 +52,8 @@ void registrar_datos_dueno(){
             int telefono;
             string correo;
             cin.ignore(32767,'\n');
+            cout<<endl;            
+            cout<<"Sea usted bienvenid@"<<endl;
             cout << "Ingrese su nombre: ", getline(cin, nombre);
             cout << "Ingresa su correo: ",  getline(cin, correo);
             cout << "Ingresa su telefono: "; cin>>telefono; 
@@ -69,6 +71,7 @@ int registrar_prestamo(){
         return prestamo_cantidad;
         break;
     case 0:
+        cout<<"Hasta luego."<<endl;
         return prestamo_cantidad;
         break;
     default:
@@ -94,7 +97,7 @@ float registrar_pago_prestamo(){
         break;
     }
 }
-int mostrar_deuda(float pagar_cantidad, float prestamo_cantidad){
+int mostrar_deuda(){
     deuda = prestamo_cantidad - pagar_cantidad;
     cout<<"La deuda es de: $" + to_string(deuda)<<endl;
 }
