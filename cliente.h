@@ -16,7 +16,6 @@ class Cliente{
     long id_cliente;
     public:
     Cliente(){
-        tipo_cliente = "Standard";
         compras = 0;
         id_cliente = 0;
     }
@@ -40,15 +39,17 @@ class Cliente{
     void setCantidad_compra(int cantidad_compra){this -> cantidad_compra = cantidad_compra;}
     void setTipo_prenda(string tipo_prenda){this -> tipo_prenda = tipo_prenda;}
 
-    string otorgar_tipo(){
+
+     string otorgar_tipo(){
         if (compras>= 10){
             tipo_cliente = "Frecuente";
         } 
         else{
             tipo_cliente = "Standard";
         }
+        setTipo_cliente(tipo_cliente);
         return tipo_cliente;
-    }
+    }//OtorgaR tipo
 
     void ingresar_datos(){
             id_cliente++;
@@ -68,7 +69,7 @@ class Cliente{
             setTelefono_cliente(telefono);
             setNombre_cliente(nombre);
             setDireccion_cliente(direccion);
-    }
+    }// Ingresar datos
 
     void registrar_compra(){
         int contador = 0;
@@ -76,18 +77,18 @@ class Cliente{
         cout << "Que tipo de prenda se va a adquirir (H/M): "; cin >> tipo_prenda;
         cout << "Cuantas prendas se quieren adquirir: "; cin >> cantidad_compra;
         compras = compras + cantidad_compra;
-    }
-    
+    }//Registrar compra
+  
     int calcular_recompensa_cliente(){
         int recompensa;
         if (compras >= 5 ){
             recompensa = compras / 5 * 100;
-        } 
+        }//If 
         else{
             recompensa = 0;
-        } 
+        }//Else
         return recompensa;
-    }
+    }//Calcula recompensa cliente
 
 
 

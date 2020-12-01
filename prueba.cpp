@@ -15,4 +15,5 @@ int main(){
     cout << inv1.agregar_Clientes() << endl;
     inv1.mostrar_atributos_cliente();
     inv1.borrar_producto();
+    inv1.recompensa_tipo_cliente();
 };

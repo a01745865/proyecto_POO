@@ -64,7 +64,7 @@ class Inventario{
         while (opcion == 1){
             cliente.ingresar_datos();
             contador++;
-            cout<<"¿Quieres ingresar otro cliente? (sí = 1, no = 0): "; cin >>opcion;
+            cout<<"¿Quieres ingresar otro cliente? (si = 1, no = 0): "; cin >>opcion;
             clientes.push_back(cliente);
         }//while
         return "\nSe agregaron "+to_string(contador)+ " clientes. ";         
@@ -98,7 +98,10 @@ class Inventario{
                     for (int b = 0; b < productos.size(); b ++){
                         if (tipo == productos[b].getGenero_prenda()){
                             productos.erase(productos.begin() + b);
-                            cout << "\nSe borro el producto: "+ productos[b].print() + "\n"; 
+                            if (saber_tipo_cliente(clientes[i]) == "Frecuente"){
+                                productos[b].aplicar_descuento_cliente();
+                            }//If
+                            cout << "\nSe aquirio el producto: "+ productos[b].print() + "\n"; 
                              break;
                         }// condicion que evalua si el tipo de prenda que se compro esta en algun objeto del vector productos
                     }// ciclo que itera el vector productos
@@ -114,6 +117,18 @@ class Inventario{
                 }//Else
         }// ciclo que itera el vector clientes
     }//borrar producto
+
+    string saber_tipo_cliente(Cliente cli){
+        cout << "\nEl cliente "+ cli.getNombre_cliente() + " es tipo: "+ cli.otorgar_tipo() +"\n" << endl;
+        return cli.otorgar_tipo();
+    }
+
+    void recompensa_tipo_cliente(){
+        for (int i = 0; i < clientes.size(); i++ ){
+            cout << "\nEl cliente: "+ clientes[i].getNombre_cliente() + " tiene una recompensa de: $"+ to_string(clientes[i].calcular_recompensa_cliente()) +" en su tienda.\n" << endl;
+        }        
+    }
+
 
     string agregar_producto(){
         int opcion = 1;

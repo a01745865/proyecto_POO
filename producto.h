@@ -9,46 +9,47 @@
 using namespace std;
 
 class Producto{
-    Cliente cliente1;
     float precio, promocion, promocion_cliente_frecuente;
     int id_producto;
-    string genero_prenda;
+    string genero_prenda, tipo_cliente;
     public:
     Producto(){
         id_producto = 0;
         promocion_cliente_frecuente = .85;
     }
         
-    Producto(float precio, float promocion, float promocion_cliente_frecuente, int id_producto,string genero_prenda){
+    Producto(float precio, float promocion, float promocion_cliente_frecuente, int id_producto,string genero_prenda, string tipo_cliente){
         this->precio = precio;
         this->promocion = promocion;
         this->promocion_cliente_frecuente = promocion_cliente_frecuente;
         this->id_producto = id_producto;
         this->genero_prenda = genero_prenda;
+        this->tipo_cliente = tipo_cliente;
     }
     float getPrecio(){return precio;}
     float getPromocion(){return promocion;}
     float getPromocion_cliente_frecuente(){return promocion_cliente_frecuente;}
     int getId_producto(){return id_producto;}
     string getGenero_prenda(){return genero_prenda;}
+    string getTipo_cliente(){return tipo_cliente;}
 
     void setPrecio(float precio){this->precio = precio;}
     void setPromocion(float promocion){this->promocion = promocion;}
     void setPromocion_cliente_frecuente(float promocion_cliente_frecuente){this->promocion_cliente_frecuente = promocion_cliente_frecuente;}
     void setId_producto(int id_producto){this->id_producto = id_producto;}
     void setGenero_prenda(string genero_prenda){this->genero_prenda = genero_prenda;}
-
+    void setTipo_cliente(string tipo_cliente){this->tipo_cliente = tipo_cliente;}
     int otorgar_id_producto(){
         ++id_producto;
         return id_producto;
     }//otorgar id producto
 
-    float aplicar_descuento_cliente(){
-        if (cliente1.otorgar_tipo() == "Frecuente"){
-            precio = precio * promocion_cliente_frecuente;
-        }
-        return precio;
-    }
+
+//Falta probar
+    void aplicar_descuento_cliente(){
+        precio = precio * promocion_cliente_frecuente;
+        cout << "Se aplico un descuento del 15% en los productos por ser cliente frecuente. " << endl;
+    }//Aplicar descuento cliente
 
     void datos_producto(){
         //vector<Producto> datos;
