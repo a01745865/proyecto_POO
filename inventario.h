@@ -139,7 +139,7 @@ class Inventario{
                 productos.push_back(producto);
             }//Ciclo que va a agregar el producto la cantidad de veces que se adquirieron
         }//while
-        return "\nSe agregaron "+to_string(contador)+ " productos. "; 
+        return "\nSe agregaron "+to_string(contador)+ " tipos de productos. "; 
     }//agregar producto
 
 };//Clase Inventario
