@@ -19,5 +19,8 @@ int main(){
     //inv1.mostrar_atributos_cliente();
     //inv1.borrar_producto();
     //inv1.recompensa_tipo_cliente();
-    d1.registrar_datos_dueno();
+    //d1.registrar_datos_dueno();
+    d1.registrar_prestamo();
+    d1.registrar_pago_prestamo();
+    d1.mostrar_deuda();
 };
