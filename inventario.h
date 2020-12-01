@@ -11,7 +11,6 @@ using  namespace std;
 
 class Inventario{
     int cantidad_producto;
-    string color_producto;
     float promocion_tienda;
     Producto producto;
     Cliente cliente;
@@ -19,9 +18,8 @@ class Inventario{
     vector<Cliente>clientes;
     public:
     Inventario()=default;//Constructor default
-    Inventario (int cantidad_producto, string color_producto,float promocion_tienda, Cliente cliente,Producto producto,vector<Producto> productos,vector<Cliente>clientes){
+    Inventario (int cantidad_producto,float promocion_tienda, Cliente cliente,Producto producto,vector<Producto> productos,vector<Cliente>clientes){
         this->cantidad_producto = cantidad_producto;
-        this->color_producto = color_producto;
         this->promocion_tienda = promocion_tienda;
         this -> producto = producto ;
         this -> cliente = cliente;
@@ -30,7 +28,6 @@ class Inventario{
     }
 
     int getCantidad_producto(){return cantidad_producto;}
-    string getColor_producto(){return color_producto;}
     float getPromocion_tienda(){return promocion_tienda;}
     Producto getProducto(){return producto;}
     Cliente getCliente(){return cliente;}
@@ -39,7 +36,6 @@ class Inventario{
 
 
     void setCantidad_producto(int cantidad_producto){this->cantidad_producto = cantidad_producto;}
-    void setColor_producto(string color_producto){this->color_producto = color_producto;}
     void setPromocion_tienda(float promocion_tienda){this->promocion_tienda = promocion_tienda;}
     void setProducto(Producto producto){this-> producto = producto;}
     void setCliente(Cliente cliente){this -> cliente = cliente;}
@@ -50,7 +46,6 @@ class Inventario{
     void mostrar_atributos_producto(){
         for (int i = 0; i < productos.size();i++){
             cout << productos[i].print() << endl;
-            //cout<<productos[i]<<endl;
         }//Ciclo para ir mopstrando cada objeto del vector
     }//Mostrar atributos del producto
 

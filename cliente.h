@@ -49,7 +49,7 @@ class Cliente{
         }
         setTipo_cliente(tipo_cliente);
         return tipo_cliente;
-    }//OtorgaR tipo
+    }//Otorgar tipo
 
     void ingresar_datos(){
             id_cliente++;

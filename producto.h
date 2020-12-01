@@ -39,13 +39,14 @@ class Producto{
     void setId_producto(int id_producto){this->id_producto = id_producto;}
     void setGenero_prenda(string genero_prenda){this->genero_prenda = genero_prenda;}
     void setTipo_cliente(string tipo_cliente){this->tipo_cliente = tipo_cliente;}
+    
     int otorgar_id_producto(){
         ++id_producto;
         return id_producto;
     }//otorgar id producto
 
 
-//Falta probar
+
     void aplicar_descuento_cliente(){
         precio = precio * promocion_cliente_frecuente;
         cout << "Se aplico un descuento del 15% en los productos por ser cliente frecuente. " << endl;
@@ -64,14 +65,6 @@ class Producto{
         setPromocion(promo);
         setGenero_prenda(genero);
         aplicar_promocion();
-        //datos.push_back(prod);
-        //for (int i=0; i<datos.size(); i++){
-            //cout<<"Producto: " + to_string(i+1);
-            //cout<<datos[i].print();
-            //datos[i].aplicar_promocion();
-        //}
-            
-        
     }//datos producto
     string print(){
         return"\nProducto: \n\tID: " + to_string(id_producto) + "\n\tEl precio del producto es de: $"+ to_string(precio)+"\n\tEse producto tiene promocion del "+ to_string(promocion) +" porciento.\n\t"+"Esa prenda está disponible para " + genero_prenda+ "\n";
