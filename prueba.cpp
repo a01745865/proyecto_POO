@@ -9,6 +9,7 @@ using  namespace std;
 
 int main(){
     Inventario inv1;
+    cout<<"Pruebas generales"<<endl;
     cout << inv1.agregar_producto() << endl;
     inv1.mostrar_atributos_producto();
     cout << inv1.mostrar_disponible() << endl; 
