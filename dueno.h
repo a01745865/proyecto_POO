@@ -1,25 +1,26 @@
 #ifndef DUENO_C
 #define DUENO_C
 
+#include <iostream>
 #include "inventario.h"
 #include "cliente.h"
 #include "producto.h"
-#include <iostream>
 #include <string>
 using namespace std;
 
 class Dueno{
     string nombre_dueno, correo_dueno;
     int telefono_dueno, id_dueno, prestamo;
-    float prestamo_cantidad, pagar_cantidad, deuda, ganancia;
+    float prestamo_cantidad, pagar_cantidad, ganancia;
     Inventario inv;
     public:
+    
     Dueno(){
         prestamo_cantidad = 0;
         pagar_cantidad = 0;
-        deuda = 0;
+        id_dueno = 0;
     }
-    Dueno(string nombre_dueno,string correo_dueno,int telefono_dueno,int id_dueno, int prestamo, float prestamo_cantidad, float pagar_cantidad, float deuda,float ganancia, Inventario inv){
+    Dueno(string nombre_dueno,string correo_dueno,int telefono_dueno,int id_dueno, int prestamo, float prestamo_cantidad, float pagar_cantidad,float ganancia, Inventario inv){
         this-> nombre_dueno = nombre_dueno;
         this-> correo_dueno = correo_dueno;
         this-> telefono_dueno = telefono_dueno;
@@ -27,7 +28,6 @@ class Dueno{
         this->prestamo = prestamo;
         this->prestamo_cantidad = prestamo_cantidad;
         this->pagar_cantidad = pagar_cantidad;
-        this->deuda = deuda;
         this->ganancia = ganancia;
         this->inv = inv;
     }
@@ -38,7 +38,6 @@ class Dueno{
     int getPrestamo(){return prestamo;}
     float getPrestamo_cantidad(){return prestamo_cantidad;}
     float getPagar_cantidad(){return pagar_cantidad;}
-    float getDeuda(){return deuda;}
     float getGanancia(){return ganancia;}
     Inventario getInv(){return inv;}
 
@@ -49,7 +48,6 @@ class Dueno{
     void setPrestamo(int prestamo){this->prestamo = prestamo;}
     void setPrestamo_cantidad(float prestamo_cantidad){this-> prestamo_cantidad = prestamo_cantidad;}
     void setPagara_cantidad(float pagar_cantidad){this->pagar_cantidad = pagar_cantidad;}
-    void setDeuda(float deuda){this->deuda=deuda;}
     void setGanancia(float ganancia){this->ganancia=ganancia;}
     void setInv(Inventario inv){this->inv=inv;}
 
@@ -71,7 +69,7 @@ void registrar_datos_dueno(){
             setNombre_dueno(nombre);
 }
 string print_info_dueno(){
-        return "Dueno: \n\tID: "+to_string(id_dueno)+"\n\tNombre: "+nombre_dueno+"\n\tCorreo: "+correo_dueno+"\n\tCorreo: "+correo_dueno+"\n\tTelefono: "+to_string(telefono_dueno)+"\n";
+        return "Dueno: \n\tID: "+to_string(id_dueno)+"\n\tNombre: "+nombre_dueno+"\n\tCorreo: "+correo_dueno+"\n\tTelefono: "+to_string(telefono_dueno)+"\n";
 
     }
 int registrar_prestamo(){
@@ -91,36 +89,28 @@ int registrar_prestamo(){
         break;
     }
   }
-float registrar_pago_prestamo(){
+void registrar_pago_prestamo(){
     int pagar;
     cout<<"\n¿Ha pagado alguna de sus deudas? (si=1, no=0) ";cin>>pagar;
     switch(pagar){
         case  1:
             cout<<"¿Cuánto dinero ha pagado de sus deudas? ";cin>>pagar_cantidad;
-            return pagar_cantidad;
             break;
         case 0:
-            return pagar_cantidad;
             break;
         default:
             cout<<"La opcion ingresada no es valida."<<endl;
-            return pagar_cantidad;
         break;
     }
 }
 void mostrar_deuda(){
-    deuda = prestamo_cantidad - pagar_cantidad;
-    cout<<"\nLa deuda es de: $" + to_string(deuda)+"\n"<<endl;
-}
-void calcular_ganancia(){
-    for (int i = 0; i<inv.getProductos().size();i++){
-        ganancia = (inv.getProductos()[i].getPrecio())*.20;
-        cout<<"\nLe estas ganando al producto $" + to_string(ganancia)+"\n"<<endl;
+    if (prestamo_cantidad == 0){
+        cout<<"\nLa deuda ya se pago\n"<<endl;
     }
-    
-}
-void agregar_producto_inventario(){
-    inv.agregar_producto();
+    else{
+        prestamo_cantidad = prestamo_cantidad - pagar_cantidad;
+        cout<<"\nLa deuda es de: $" + to_string(prestamo_cantidad)+"\n"<<endl;
+    }
 }
 };//Clase dueño
 #endif

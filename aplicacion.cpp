@@ -1,12 +1,14 @@
 #include <iostream>
 #include <string>
 #include "inventario.h"
+#include "dueno.h"
 using namespace std;
 
 int main( ){
     int res {};
     Inventario inv;
-    while(res != 10){
+    Dueno d1; // Esto es parte de la implementacion de la programacion individual de Erika
+    while(res != 15){
         cout<<"\n~~Ingresa un numero de acuerdo a la opcion que quieras elegir.~~\n"<<endl;
         cout<<"\t1. Agregar productos al inventario. \n";
         cout<<"\t2. Dar de alta a un cliente. \n";
@@ -17,7 +19,12 @@ int main( ){
         cout<<"\t7. Ingresar datos del proveedor. \n";// Esto es parte de la implementacion de la programacion individual de Angel
         cout<<"\t8. Ver datos del proveedor. \n";// Esto es parte de la implementacion de la programacion individual de Angel
         cout<<"\t9. Hacer pedido al proveedor. \n";// Esto es parte de la implementacion de la programacion individual de Angel
-        cout<<"\t10. Salir. \n";
+        cout<<"\t10. Registrar datos del dueno. \n";// Esto es parte de la implementacion de la programacion individual de Erika
+        cout<<"\t11. Ver datos del dueno. \n";// Esto es parte de la implementacion de la programacion individual de Erika
+        cout<<"\t12. Registrar un prestamo. \n";// Esto es parte de la implementacion de la programacion individual de Erika
+        cout<<"\t13. Registrar que ya pago un prestamo. \n";// Esto es parte de la implementacion de la programacion individual de Erika
+        cout<<"\t14. Ver la deuda que tiene. \n";// Esto es parte de la implementacion de la programacion individual de Erika
+        cout<<"\t15. Salir. \n";
         cout<<"Opcion: "; cin>>res;
 
         switch (res)
@@ -94,6 +101,45 @@ int main( ){
             break;
         case 9:// Esto es parte de la implementacion de la programacion individual de Angel
             inv.hacer_pedido();
+            break;
+        case 10: // Esto es parte de la implementacion de la programacion individual de Erika
+             d1.registrar_datos_dueno();//Parte individual hecha por Erika
+             break;
+        case 11:
+            if (d1.getId_dueno() == 0){
+                cout << "\nNo hay ningun dueno registrado, favor de ingresar antes un dueno. \n" << endl;
+                break;
+            }    
+            else{
+                cout<<d1.print_info_dueno()<<endl;//Parte individual hecha por Erika     
+            cout<<endl;
+            break;
+            } 
+        case 12:
+            d1.registrar_prestamo();//Parte individual hecha por Erika
+            cout<<endl;
+            break;
+        case 13:
+            if(d1.getPrestamo_cantidad()==0){
+                cout<<"\nNo ha pedido ningun prestamo.\n"<<endl;
+                break;
+            }
+            else{
+            d1.registrar_pago_prestamo();//Parte individual hecha por Erika
+            cout<<endl;
+            break;                
+            }
+        case 14://Parte individual hecha por Erika
+            if(d1.getPrestamo_cantidad()==0){
+                cout<<"\nNo ha pedido ningun prestamo.\n"<<endl;
+                cout<<endl;
+                break;
+            } 
+            else{
+                d1.mostrar_deuda();
+                cout<<endl;
+                break; 
+            } 
         }//switch
     }//while
 };//main

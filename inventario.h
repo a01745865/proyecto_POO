@@ -83,6 +83,7 @@ class Inventario{
 
     void borrar_producto(){
         string tipo;
+        string tipo_cliente;
         int contador_m = 0;
         int contador_h = 0;
         int cantidad;
@@ -99,7 +100,7 @@ class Inventario{
             clientes[i].registrar_compra();
             tipo = clientes[i].getTipo_prenda();
             cantidad = clientes[i].getCantidad_compra();
-            tipo_cliente = saber_tipo_cliente(clientes[i];
+            tipo_cliente = saber_tipo_cliente(clientes[i]);
             if (tipo_cliente == "Frecuente"){
                 cout << "\nSe le hace un descuento del 15% adicional a "+ clientes[i].getNombre_cliente() + " por ser cliente Frecuente. \n" << endl;
             }
