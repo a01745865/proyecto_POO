@@ -26,4 +26,8 @@ int main(){
     d1.registrar_prestamo();//Parte individual hecha por Erika
     d1.registrar_pago_prestamo();//Parte individual hecha por Erika
     d1.mostrar_deuda();//Parte individual hecha por Erika
+<<<<<<< Updated upstream
 };
+=======
+};
+>>>>>>> Stashed changes
