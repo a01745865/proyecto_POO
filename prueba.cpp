@@ -16,6 +16,7 @@ int main(){
     inv1.mostrar_atributos_cliente();
     inv1.borrar_producto();
     inv1.recompensa_tipo_cliente();
+    inv1.hacer_pedido();//Esto es parte de la implementacion de la programacion individual de Angel
     //Parte individual hecha por Erika
     Dueno d1;
     cout<<"Pruebas generales"<<endl;
