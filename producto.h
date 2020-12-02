@@ -3,7 +3,6 @@
 
 
 #include <iostream>
-#include "cliente.h"
 #include <string>
 #include <vector>
 using namespace std;
@@ -57,7 +56,7 @@ class Producto{
         float costo;
         float promo;
         string genero;
-        cout<<"Ingresa el precio del producto: "; cin >> costo;
+        cout<<"Ingresa el precio del producto para el cliente: "; cin >> costo;
         cout<<"¿El producto tiene una promocion? (si no tiene pon 0, si si escribelo como decimal): "; cin >> promo;
         cout<<"¿De que genero es la prenda? (H/M) ";cin >>genero;
         cout<<endl;
