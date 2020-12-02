@@ -71,7 +71,6 @@ class Cliente{
     }// Ingresar datos
 
     void registrar_compra(){
-        int contador = 0;
         cout << "Cliente: "+ nombre_cliente +"\n";
         cout << "Que tipo de prenda se va a adquirir (H/M): "; cin >> tipo_prenda;
         cout << "Cuantas prendas se quieren adquirir: "; cin >> cantidad_compra;
