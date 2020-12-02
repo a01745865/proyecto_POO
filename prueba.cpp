@@ -1,7 +1,5 @@
 
 #include "inventario.h"
-#include "cliente.h"
-#include "producto.h"
 #include "dueno.h"
 #include <iostream>
 #include <string>
